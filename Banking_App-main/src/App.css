@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root {
+  --first-color: whitesmoke;
+  --secondary-color: #87cefa; /* light sky blue */
+  --text-color: #2e3b4e;
+  --secondary-text-color: #5f6f81;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --font-family: 'Poppins', sans-serif;
+  --transition: all 0.3s ease;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: var(--transition);
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--first-color);
+  line-height: 1.6;
+}
+
+hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 280px auto;
+  gap: 1rem;
+}
+
+h1, h2, h3 {
+  margin: 0.5rem 0;
+}
+
+#form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  max-width: 800px;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#form h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+#logo {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#side-menu {
+  background-color: var(--text-color);
+  padding: 2rem 1rem;
+  font-size: 1rem;
+}
+
+#side-menu ul {
+  list-style: none;
+}
+
+#side-menu li {
+  padding: 1rem 0;
+}
+
+#side-menu a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  display: block;
+}
+
+#side-menu a:hover,
+#side-menu a.active {
+  color: white;
+  font-weight: bold;
+}
+
+#main-content {
+  padding: 2rem;
+  animation: fadein .4s;
+  overflow-y: auto;
+}
+
+.account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.account h3 {
+  text-transform: uppercase;
+}
+
+.balance {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+#actions {
+  margin-top: 1.5rem;
+}
+
+#actions button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+#actions button:hover {
+  background-color: #00bfff;
+}
+
+#transactions {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.transaction-item {
+  display: grid;
+  grid-template-columns: 200px auto 100px;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 1rem 0.8rem;
+  border-bottom: 1px solid rgba(46, 59, 78, 0.1);
+}
+
+td:nth-child(3), td:nth-child(4) {
+  text-align: right;
+}
+
+#login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#login {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  max-width: 480px;
+  width: 100%;
+}
+
+#login #logo {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--text-color);
+}
+
+label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  text-transform: uppercase;
+  color: #888;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 6px;
+  font-family: var(--font-family);
+}
+
+input:disabled {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.btn, .btn2 {
+  background-color: var(--secondary-text-color);
+  color: white;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.btn:hover, .btn2:hover {
+  background-color: var(--text-color);
+}
+
+.notif {
+  text-align: center;
+  padding: 0.7rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.danger {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: red;
+}
+
+.success {
+  background-color: rgba(0, 128, 0, 0.1);
+  color: green;
+}
+
+.right {
+  text-align: right;
+}
+
+.transfer-icon {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+}
+
+.big-input {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.main {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#form.budget {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.budget-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(100, 100, 100, 0.4);
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 500px;
+  animation: fadein .4s;
+}
+
+.modal textarea {
+  height: 100px;
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+}
+
+.modal input[type="number"] {
+  text-align: right;
+}
+
+.modal button {
+  margin-top: 1rem;
+}
+
+.btn-muted {
+  background-color: rgba(135, 206, 250, 0.3);
+  color: var(--text-color);
+}
+
+.budget-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.even {
+  background-color: rgba(245, 245, 245, 0.6);
+}
+
+.mr {
+  margin-right: 0.7rem;
+  font-size: 1rem;
+  background-color: rgba(135, 206, 250, 0.3);
+  color: var(--text-color);
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  font-weight: 600;
+  border: none;
+}
+
+.mr:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: red;
+}
+
+.title {
+  text-transform: capitalize;
+}
+/* Mobile Devices */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    height: auto;
+  }
+
+  #side-menu {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  #form, #transactions, .account {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .transaction-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .budget-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .modal {
+    width: 90%;
+    top: 10%;
+  }
+
+  .balance {
+    font-size: 1.5rem;
+  }
+
+  .main {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    grid-template-columns: 200px auto;
+  }
+
+  #form, #transactions, .account {
+    padding: 1.5rem;
+  }
+
+  .modal {
+    width: 70%;
+  }
+
+  .balance {
+    font-size: 1.8rem;
+  }
+}
+/* Responsive Buttons - Mobile First Approach */
+@media (max-width: 768px) {
+  button, .btn, .btn2, #actions button, .mr, .btn-muted {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  #actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  button, .btn, .btn2, #actions button, .mr, .btn-muted {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  #actions {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+/* Mobile: Responsive Account Section */
+@media (max-width: 768px) {
+  .account {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .account h3 {
+    font-size: 1.2rem;
+    word-break: break-word;
+  }
+
+  .balance {
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: left;
+  }
+}
+
